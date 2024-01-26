@@ -3,6 +3,8 @@ vless://6c5d5e78-894c-4c11-a3f0-5c148603cdca@scratch-benefit-why-cannon.trycloud
 vless://6c5d5e78-894c-4c11-a3f0-5c148603cdca@meta-reconstruction-measuring-marine.trycloudflare.com:443?encryption=none&security=tls&sni=meta-reconstruction-measuring-marine.trycloudflare.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=meta-reconstruction-measuring-marine.trycloudflare.com&path=%2Fholypath#mtn-vless-ws
 vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.trycloudflare.com:443?encryption=none&security=tls&sni=subjective-hiring-exam-switzerland.trycloudflare.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=subjective-hiring-exam-switzerland.trycloudflare.com&path=%2Fholypath#open-vless-ws
 
+
+
 {
     "log": {
        "loglevel": "Warn"
@@ -57,11 +59,11 @@ vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.
           "settings": {
              "vnext": [
                 {
-                   "address": "188.114.98.0",
+                   "address": "www.zula.ir",
                    "port": 8443,
                    "users": [
                       {
-                         "id": "8f8cdf40-61bc-4a0b-951c-84e3095e584e",
+                         "id": "9127c77e-6f03-4e98-d9ad-13f76dd10a47",
                          "encryption": "none"
                       }
                    ]
@@ -164,3 +166,5 @@ vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.
        ]
     }
  }
+
+
