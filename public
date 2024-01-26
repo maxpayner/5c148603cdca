@@ -2,3 +2,205 @@ vless://6c5d5e78-894c-4c11-a3f0-5c148603cdca@subjective-hiring-exam-switzerland.
 vless://6c5d5e78-894c-4c11-a3f0-5c148603cdca@scratch-benefit-why-cannon.trycloudflare.com:443?encryption=none&security=tls&sni=scratch-benefit-why-cannon.trycloudflare.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=scratch-benefit-why-cannon.trycloudflare.com&path=%2Fholypath#mci-vless-ws
 vless://6c5d5e78-894c-4c11-a3f0-5c148603cdca@meta-reconstruction-measuring-marine.trycloudflare.com:443?encryption=none&security=tls&sni=meta-reconstruction-measuring-marine.trycloudflare.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=meta-reconstruction-measuring-marine.trycloudflare.com&path=%2Fholypath#mtn-vless-ws
 vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.trycloudflare.com:443?encryption=none&security=tls&sni=subjective-hiring-exam-switzerland.trycloudflare.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=subjective-hiring-exam-switzerland.trycloudflare.com&path=%2Fholypath#open-vless-ws
+
+dmxlc3M6Ly82YzVkNWU3OC04OTRjLTRjMTEtYTNmMC01YzE0ODYwM2NkY2FAc2NyYXRjaC1iZW5lZml0LXdoeS1jYW5ub24udHJ5Y2xvdWRmbGFyZS5jb206NDQzP2VuY3J5cHRpb249bm9uZSZzZWN1cml0eT10bHMmc25pPXNjcmF0Y2gtYmVuZWZpdC13aHktY2Fubm9uLnRyeWNsb3VkZmxhcmUuY29tJmFscG49aDIlMkNodHRwJTJGMS4xJmZwPWNocm9tZSZ0eXBlPXdzJmhvc3Q9c2NyYXRjaC1iZW5lZml0LXdoeS1jYW5ub24udHJ5Y2xvdWRmbGFyZS5jb20mcGF0aD0lMkZob2x5cGF0aCNtY2ktdmxlc3Mtd3MNCg==
+
+{
+  "policy": {
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "api",
+      "port": 63452,
+      "listen": "127.0.0.1",
+      "protocol": "dokodemo-door",
+      "settings": {
+        "udp": false,
+        "address": "127.0.0.1",
+        "allowTransparent": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "scratch-benefit-why-cannon.trycloudflare.com",
+            "port": 443,
+            "users": [
+              {
+                "id": "6c5d5e78-894c-4c11-a3f0-5c148603cdca",
+                "alterId": 0,
+                "email": "t@t.tt",
+                "security": "auto",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "serverName": "scratch-benefit-why-cannon.trycloudflare.com",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ],
+          "fingerprint": "chrome",
+          "show": false
+        },
+        "wsSettings": {
+          "path": "/holypath",
+          "headers": {
+            "Host": "scratch-benefit-why-cannon.trycloudflare.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"
+          }
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "stats": {},
+  "api": {
+    "tag": "api",
+    "services": [
+      "StatsService"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "enabled": true
+      },
+      {
+        "id": "5653439176426116423",
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": [
+          "domain:payampardaz.com",
+          "domain:.ir",
+          "domain:parsvds.com",
+          "domain:sanjesh.org",
+          "domain:top-movies2filmha.click",
+          "domain:sapientia.ro",
+          "domain:payaneha.com",
+          "domain:uploading.onlinedomain:apple.com",
+          "domain:research.google.com"
+        ],
+        "enabled": true
+      },
+      {
+        "id": "4870505986762948478",
+        "type": "field",
+        "outboundTag": "block",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "enabled": true
+      },
+      {
+        "id": "5032708426203575572",
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": [
+          "geosite:cn"
+        ],
+        "enabled": true
+      },
+      {
+        "id": "5723281267708276736",
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": [
+          "geoip:private",
+          "geoip:cn"
+        ],
+        "enabled": true
+      },
+      {
+        "id": "5003277556676508387",
+        "type": "field",
+        "port": "0-65535",
+        "outboundTag": "proxy",
+        "enabled": true
+      }
+    ]
+  }
+}
