@@ -1,1 +1,161 @@
-custom://ew0KICAiZG5zIiA6IHsNCiAgICAic2VydmVycyIgOiBbDQogICAgICAiOC44LjguOCINCiAgICBdLA0KICAgICJ0YWciIDogImJ1aWx0LWluLUROUyINCiAgfSwNCiAgImZha2VkbnMiIDogWw0KICAgIHsNCiAgICAgICJpcFBvb2wiIDogIjE5OC4yMC4wLjBcLzE1IiwNCiAgICAgICJwb29sU2l6ZSIgOiA1MTINCiAgICB9LA0KICAgIHsNCiAgICAgICJpcFBvb2wiIDogImZjMDA6OlwvNjQiLA0KICAgICAgInBvb2xTaXplIiA6IDUxMg0KICAgIH0NCiAgXSwNCiAgImluYm91bmRzIiA6IFsNCiAgICB7DQogICAgICAibGlzdGVuIiA6ICIxMjcuMC4wLjEiLA0KICAgICAgInBvcnQiIDogMTA4MCwNCiAgICAgICJwcm90b2NvbCIgOiAic29ja3MiLA0KICAgICAgInNldHRpbmdzIiA6IHsNCiAgICAgICAgImF1dGgiIDogIm5vYXV0aCIsDQogICAgICAgICJ1ZHAiIDogdHJ1ZQ0KICAgICAgfSwNCiAgICAgICJzbmlmZmluZyIgOiB7DQogICAgICAgICJkZXN0T3ZlcnJpZGUiIDogWw0KICAgICAgICAgICJodHRwIiwNCiAgICAgICAgICAidGxzIiwNCiAgICAgICAgICAicXVpYyIsDQogICAgICAgICAgImZha2VkbnMiDQogICAgICAgIF0sDQogICAgICAgICJlbmFibGVkIiA6IHRydWUsDQogICAgICAgICJyb3V0ZU9ubHkiIDogdHJ1ZQ0KICAgICAgfSwNCiAgICAgICJ0YWciIDogInNvY2tzIg0KICAgIH0NCiAgXSwNCiAgImxvZyIgOiB7DQogICAgImxvZ2xldmVsIiA6ICJXYXJuIg0KICB9LA0KICAib3V0Ym91bmRzIiA6IFsNCiAgICB7DQogICAgICAicHJvdG9jb2wiIDogInZsZXNzIiwNCiAgICAgICJzZXR0aW5ncyIgOiB7DQogICAgICAgICJ2bmV4dCIgOiBbDQogICAgICAgICAgew0KICAgICAgICAgICAgImFkZHJlc3MiIDogInd3dy56dWxhLmlyIiwNCiAgICAgICAgICAgICJwb3J0IiA6IDg0NDMsDQogICAgICAgICAgICAidXNlcnMiIDogWw0KICAgICAgICAgICAgICB7DQogICAgICAgICAgICAgICAgImVuY3J5cHRpb24iIDogIm5vbmUiLA0KICAgICAgICAgICAgICAgICJpZCIgOiAiOTEyN2M3N2UtNmYwMy00ZTk4LWQ5YWQtMTNmNzZkZDEwYTQ3Ig0KICAgICAgICAgICAgICB9DQogICAgICAgICAgICBdDQogICAgICAgICAgfQ0KICAgICAgICBdDQogICAgICB9LA0KICAgICAgInN0cmVhbVNldHRpbmdzIiA6IHsNCiAgICAgICAgIm5ldHdvcmsiIDogIndzIiwNCiAgICAgICAgInNlY3VyaXR5IiA6ICJ0bHMiLA0KICAgICAgICAic29ja29wdCIgOiB7DQogICAgICAgICAgImRpYWxlclByb3h5IiA6ICJmcmFnLW91dCIsDQogICAgICAgICAgInRjcE5vRGVsYXkiIDogdHJ1ZQ0KICAgICAgICB9LA0KICAgICAgICAidGxzU2V0dGluZ3MiIDogew0KICAgICAgICAgICJhbGxvd0luc2VjdXJlIiA6IGZhbHNlLA0KICAgICAgICAgICJmaW5nZXJwcmludCIgOiAicmFuZG9taXplZCIsDQogICAgICAgICAgIm1pblZlcnNpb24iIDogIjEuMyIsDQogICAgICAgICAgInNlcnZlck5hbWUiIDogImFpaXNvbnRoZXdheS5zaG9wIg0KICAgICAgICB9LA0KICAgICAgICAid3NTZXR0aW5ncyIgOiB7DQogICAgICAgICAgImhlYWRlcnMiIDogew0KICAgICAgICAgICAgIkhvc3QiIDogImFpaXNvbnRoZXdheS5zaG9wIg0KICAgICAgICAgIH0sDQogICAgICAgICAgInBhdGgiIDogIlwvaG9seXBhdGhmcmFnIg0KICAgICAgICB9DQogICAgICB9LA0KICAgICAgInRhZyIgOiAicHJveHkiDQogICAgfSwNCiAgICB7DQogICAgICAicHJvdG9jb2wiIDogImZyZWVkb20iLA0KICAgICAgInNldHRpbmdzIiA6IHsNCiAgICAgICAgImZyYWdtZW50IiA6IHsNCiAgICAgICAgICAiaW50ZXJ2YWwiIDogIjEwLTE1IiwNCiAgICAgICAgICAibGVuZ3RoIiA6ICIxMC0yMCIsDQogICAgICAgICAgInBhY2tldHMiIDogInRsc2hlbGxvIg0KICAgICAgICB9DQogICAgICB9LA0KICAgICAgInN0cmVhbVNldHRpbmdzIiA6IHsNCiAgICAgICAgInNvY2tvcHQiIDogew0KICAgICAgICAgICJkb21haW5TdHJhdGVneSIgOiAiVXNlSVAiDQogICAgICAgIH0NCiAgICAgIH0sDQogICAgICAidGFnIiA6ICJmcmFnLW91dCINCiAgICB9LA0KICAgIHsNCiAgICAgICJwcm90b2NvbCIgOiAiZnJlZWRvbSIsDQogICAgICAic2V0dGluZ3MiIDogew0KDQogICAgICB9LA0KICAgICAgInN0cmVhbVNldHRpbmdzIiA6IHsNCg0KICAgICAgfSwNCiAgICAgICJ0YWciIDogImRpcmVjdCINCiAgICB9LA0KICAgIHsNCiAgICAgICJwcm90b2NvbCIgOiAiYmxhY2tob2xlIiwNCiAgICAgICJzZXR0aW5ncyIgOiB7DQoNCiAgICAgIH0sDQogICAgICAidGFnIiA6ICJibG9jayINCiAgICB9LA0KICAgIHsNCiAgICAgICJwcm90b2NvbCIgOiAiZG5zIiwNCiAgICAgICJzZXR0aW5ncyIgOiB7DQoNCiAgICAgIH0sDQogICAgICAidGFnIiA6ICJkbnMtb3V0Ig0KICAgIH0NCiAgXSwNCiAgInJvdXRpbmciIDogew0KICAgICJkb21haW5NYXRjaGVyIiA6ICJoeWJyaWQiLA0KICAgICJkb21haW5TdHJhdGVneSIgOiAiSVBJZk5vbk1hdGNoIiwNCiAgICAicnVsZXMiIDogWw0KICAgICAgew0KICAgICAgICAiaW5ib3VuZFRhZyIgOiBbDQogICAgICAgICAgInNvY2tzX0lOIg0KICAgICAgICBdLA0KICAgICAgICAib3V0Ym91bmRUYWciIDogImRucy1vdXQiLA0KICAgICAgICAicG9ydCIgOiAiNTMiLA0KICAgICAgICAidHlwZSIgOiAiZmllbGQiDQogICAgICB9LA0KICAgICAgew0KICAgICAgICAiaW5ib3VuZFRhZyIgOiBbDQogICAgICAgICAgImJ1aWx0LWluLUROUyINCiAgICAgICAgXSwNCiAgICAgICAgIm91dGJvdW5kVGFnIiA6ICJwcm94eSIsDQogICAgICAgICJ0eXBlIiA6ICJmaWVsZCINCiAgICAgIH0NCiAgICBdDQogIH0NCn0
+{
+    "log": {
+       "loglevel": "Warn"
+    },
+    "dns": {
+       "servers": [
+          "8.8.8.8"
+       ],
+       "queryStrategy": "UseIP",
+       "tag": "built-in-DNS"
+    },
+    "inbounds": [
+       {
+          "listen": "127.0.0.1",
+          "port": 10808,
+          "protocol": "socks",
+          "tag": "socks_IN",
+          "settings": {
+             "udp": true
+          },
+          "sniffing": {
+             "enabled": true,
+             "destOverride": [
+                "http",
+                "tls",
+                "quic"
+             ]
+          }
+       },
+       {
+          "listen": "127.0.0.1",
+          "port": 10809,
+          "protocol": "http",
+          "settings": {
+             "allowTransparent": true,
+             "timeout": 300
+          },
+          "sniffing": {
+             "enabled": true,
+             "destOverride": [
+                "http",
+                "tls"
+             ]
+          },
+          "tag": "http_IN"
+       }
+    ],
+    "outbounds": [
+       {
+          "tag": "proxy",
+          "protocol": "vless",
+          "settings": {
+             "vnext": [
+                {
+                   "address": "www.zula.ir",
+                   "port": 8443,
+                   "users": [
+                      {
+                         "id": "9127c77e-6f03-4e98-d9ad-13f76dd10a47",
+                         "encryption": "none"
+                      }
+                   ]
+                }
+             ]
+          },
+          "streamSettings": {
+             "network": "ws",
+             "security": "tls",
+             "tlsSettings": {
+                "allowInsecure": false,
+                "minVersion": "1.3",
+                "fingerprint": "randomized", 
+                "serverName": "aiisontheway.shop"
+             },
+             "wsSettings": {
+                "headers": {
+                   "Host": "aiisontheway.shop"
+                },
+                "path": "/holypathfrag"
+             },
+             "sockopt": {
+                "tcpFastOpen": false,
+                "dialerProxy": "frag-out",
+                "tcpKeepAliveIdle": 120,
+                "tcpNoDelay": true
+             }
+          },
+          "mux": {
+             "enabled": false,
+             "concurrency": 8,
+             "xudpConcurrency": 8,
+             "xudpProxyUDP443": "reject"
+          }
+       },
+       {
+          "tag": "frag-out",
+          "protocol": "freedom",
+          "settings": {
+             "domainStrategy": "UseIP",
+             "fragment": {
+                "packets": "tlshello",
+                "length": "10-20",
+                "interval": "10-15"
+             }
+          },
+          "streamSettings": {
+             "sockopt": {
+                "TcpNoDelay": true,
+                "tcpKeepAliveIdle": 120,
+                "domainStrategy": "UseIP"
+             }
+          }
+       },
+       {
+          "protocol": "freedom",
+          "settings": {
+             "domainStrategy": "UseIP"
+          },
+          "streamSettings": {},
+          "tag": "direct"
+       },
+       {
+          "protocol": "blackhole",
+          "settings": {
+             "response": {
+                "type": "none"
+             }
+          },
+          "tag": "block"
+       },
+       {
+          "protocol": "dns",
+          "settings": {
+             "nonIPQuery": "drop"
+          },
+          "proxySettings": {
+             "tag": "proxy"
+          },
+          "tag": "dns-out"
+       }
+    ],
+    "routing": {
+       "domainMatcher": "hybrid",
+       "domainStrategy": "IPIfNonMatch",
+       "rules": [
+          {
+             "inboundTag": [
+                "socks_IN"
+             ],
+             "outboundTag": "dns-out",
+             "port": "53",
+             "type": "field"
+          },
+          {
+             "inboundTag": ["built-in-DNS"],
+             "outboundTag": "proxy",
+             "type": "field"
+          }
+       ]
+    }
+ }
