@@ -1,161 +1,144 @@
 {
-    "log": {
-       "loglevel": "Warn"
-    },
-    "dns": {
-       "servers": [
-          "8.8.8.8"
-       ],
-       "queryStrategy": "UseIP",
-       "tag": "built-in-DNS"
-    },
-    "inbounds": [
-       {
-          "listen": "127.0.0.1",
-          "port": 10808,
-          "protocol": "socks",
-          "tag": "socks_IN",
-          "settings": {
-             "udp": true
-          },
-          "sniffing": {
-             "enabled": true,
-             "destOverride": [
-                "http",
-                "tls",
-                "quic"
-             ]
-          }
-       },
-       {
-          "listen": "127.0.0.1",
-          "port": 10809,
-          "protocol": "http",
-          "settings": {
-             "allowTransparent": true,
-             "timeout": 300
-          },
-          "sniffing": {
-             "enabled": true,
-             "destOverride": [
-                "http",
-                "tls"
-             ]
-          },
-          "tag": "http_IN"
-       }
+  "dns" : {
+    "servers" : [
+      "8.8.8.8"
     ],
-    "outbounds": [
-       {
-          "tag": "proxy",
-          "protocol": "vless",
-          "settings": {
-             "vnext": [
-                {
-                   "address": "www.zula.ir",
-                   "port": 8443,
-                   "users": [
-                      {
-                         "id": "9127c77e-6f03-4e98-d9ad-13f76dd10a47",
-                         "encryption": "none"
-                      }
-                   ]
-                }
-             ]
-          },
-          "streamSettings": {
-             "network": "ws",
-             "security": "tls",
-             "tlsSettings": {
-                "allowInsecure": false,
-                "minVersion": "1.3",
-                "fingerprint": "randomized", 
-                "serverName": "aiisontheway.shop"
-             },
-             "wsSettings": {
-                "headers": {
-                   "Host": "aiisontheway.shop"
-                },
-                "path": "/holypathfrag"
-             },
-             "sockopt": {
-                "tcpFastOpen": false,
-                "dialerProxy": "frag-out",
-                "tcpKeepAliveIdle": 120,
-                "tcpNoDelay": true
-             }
-          },
-          "mux": {
-             "enabled": false,
-             "concurrency": 8,
-             "xudpConcurrency": 8,
-             "xudpProxyUDP443": "reject"
-          }
-       },
-       {
-          "tag": "frag-out",
-          "protocol": "freedom",
-          "settings": {
-             "domainStrategy": "UseIP",
-             "fragment": {
-                "packets": "tlshello",
-                "length": "10-20",
-                "interval": "10-15"
-             }
-          },
-          "streamSettings": {
-             "sockopt": {
-                "TcpNoDelay": true,
-                "tcpKeepAliveIdle": 120,
-                "domainStrategy": "UseIP"
-             }
-          }
-       },
-       {
-          "protocol": "freedom",
-          "settings": {
-             "domainStrategy": "UseIP"
-          },
-          "streamSettings": {},
-          "tag": "direct"
-       },
-       {
-          "protocol": "blackhole",
-          "settings": {
-             "response": {
-                "type": "none"
-             }
-          },
-          "tag": "block"
-       },
-       {
-          "protocol": "dns",
-          "settings": {
-             "nonIPQuery": "drop"
-          },
-          "proxySettings": {
-             "tag": "proxy"
-          },
-          "tag": "dns-out"
-       }
-    ],
-    "routing": {
-       "domainMatcher": "hybrid",
-       "domainStrategy": "IPIfNonMatch",
-       "rules": [
-          {
-             "inboundTag": [
-                "socks_IN"
-             ],
-             "outboundTag": "dns-out",
-             "port": "53",
-             "type": "field"
-          },
-          {
-             "inboundTag": ["built-in-DNS"],
-             "outboundTag": "proxy",
-             "type": "field"
-          }
-       ]
+    "tag" : "built-in-DNS"
+  },
+  "fakedns" : [
+    {
+      "ipPool" : "198.20.0.0\/15",
+      "poolSize" : 512
+    },
+    {
+      "ipPool" : "fc00::\/64",
+      "poolSize" : 512
     }
- }
+  ],
+  "inbounds" : [
+    {
+      "listen" : "127.0.0.1",
+      "port" : 1080,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "http",
+          "tls",
+          "quic",
+          "fakedns"
+        ],
+        "enabled" : true,
+        "routeOnly" : true
+      },
+      "tag" : "socks"
+    }
+  ],
+  "log" : {
+    "loglevel" : "Warn"
+  },
+  "outbounds" : [
+    {
+      "protocol" : "vless",
+      "settings" : {
+        "vnext" : [
+          {
+            "address" : "www.zula.ir",
+            "port" : 8443,
+            "users" : [
+              {
+                "encryption" : "none",
+                "id" : "9127c77e-6f03-4e98-d9ad-13f76dd10a47"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings" : {
+        "network" : "ws",
+        "security" : "tls",
+        "sockopt" : {
+          "dialerProxy" : "frag-out",
+          "tcpNoDelay" : true
+        },
+        "tlsSettings" : {
+          "allowInsecure" : false,
+          "fingerprint" : "randomized",
+          "minVersion" : "1.3",
+          "serverName" : "aiisontheway.shop"
+        },
+        "wsSettings" : {
+          "headers" : {
+            "Host" : "aiisontheway.shop"
+          },
+          "path" : "\/holypathfrag"
+        }
+      },
+      "tag" : "proxy"
+    },
+    {
+      "protocol" : "freedom",
+      "settings" : {
+        "fragment" : {
+          "interval" : "10-15",
+          "length" : "10-20",
+          "packets" : "tlshello"
+        }
+      },
+      "streamSettings" : {
+        "sockopt" : {
+          "domainStrategy" : "UseIP"
+        }
+      },
+      "tag" : "frag-out"
+    },
+    {
+      "protocol" : "freedom",
+      "settings" : {
+
+      },
+      "streamSettings" : {
+
+      },
+      "tag" : "direct"
+    },
+    {
+      "protocol" : "blackhole",
+      "settings" : {
+
+      },
+      "tag" : "block"
+    },
+    {
+      "protocol" : "dns",
+      "settings" : {
+
+      },
+      "tag" : "dns-out"
+    }
+  ],
+  "routing" : {
+    "domainMatcher" : "hybrid",
+    "domainStrategy" : "IPIfNonMatch",
+    "rules" : [
+      {
+        "inboundTag" : [
+          "socks_IN"
+        ],
+        "outboundTag" : "dns-out",
+        "port" : "53",
+        "type" : "field"
+      },
+      {
+        "inboundTag" : [
+          "built-in-DNS"
+        ],
+        "outboundTag" : "proxy",
+        "type" : "field"
+      }
+    ]
+  }
+}
