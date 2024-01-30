@@ -58,11 +58,11 @@
                 "vnext": [
                     {
                         "address": "gama.ir",
-                        "port": 8443,
+                        "port": 443,
                         "users": [
                             {
                                 "encryption": "none",
-                                "id": "9127c77e-6f03-4e98-d9ad-13f76dd10a47"
+                                "id": "6c5d5e78-894c-4c11-a3f0-5c148603cdca"
                             }
                         ]
                     }
@@ -87,7 +87,7 @@
                     "headers": {
                         "Host": "aiisontheway.shop"
                     },
-                    "path": "/holypathfrag"
+                    "path": "/holypath"
                 }
             },
             "tag": "proxy"
