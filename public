@@ -59,7 +59,7 @@ vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.
           "settings": {
              "vnext": [
                 {
-                   "address": "www.zula.ir",
+                   "address": "gama.ir",
                    "port": 8443,
                    "users": [
                       {
@@ -93,7 +93,7 @@ vless://71191f5a-de4f-4ae0-91dc-4d5f483e1534@subjective-hiring-exam-switzerland.
              }
           },
           "mux": {
-             "enabled": false,
+             "enabled": true,
              "concurrency": 8,
              "xudpConcurrency": 8,
              "xudpProxyUDP443": "reject"
