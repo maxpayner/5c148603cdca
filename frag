@@ -97,8 +97,8 @@
             "settings": {
                 "domainStrategy": "UseIP",
                 "fragment": {
-                    "interval": "10-15",
-                    "length": "10-15",
+                    "interval": "5-10",
+                    "length": "5-10",
                     "packets": "tlshello"
                 }
             },
