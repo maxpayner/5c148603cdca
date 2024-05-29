@@ -1,43 +1,47 @@
 {
     "dns": {
-        "queryStrategy": "UseIP",
         "servers": [
+			"1.1.1.1",
             "8.8.8.8"
         ],
         "tag": "built-in-DNS"
     },
     "inbounds": [
         {
-            "listen": "127.0.0.1",
+            "listen": "0.0.0.0",
             "port": 10808,
             "protocol": "socks",
             "settings": {
-                "udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true
-            },
-            "tag": "socks_IN"
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "allowTransparent": true,
-                "timeout": 300
+                "udp": true,
+				"auth": "noauth",
+				"allowTransparent": false
             },
             "sniffing": {
                 "destOverride": [
                     "http",
                     "tls"
                 ],
-                "enabled": true
+                "enabled": true,
+				"routeOnly": false
+            },
+            "tag": "socks_IN"
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "allowTransparent": false,
+				"auth": "noauth",
+				"udp": true
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls"
+                ],
+                "enabled": true,
+				"routeOnly": false
             },
             "tag": "http_IN"
         }
@@ -79,13 +83,14 @@
                 },
                 "tlsSettings": {
                     "allowInsecure": false,
-                    "fingerprint": "randomized",
+                    "fingerprint": "chrome",
                     "minVersion": "1.3",
                     "serverName": "aiisontheway.shop"
                 },
                 "wsSettings": {
                     "headers": {
-                        "Host": "aiisontheway.shop"
+                        "Host": "aiisontheway.shop",
+						"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"
                     },
                     "path": "/holypath"
                 }
@@ -142,7 +147,7 @@
     ],
     "routing": {
         "domainMatcher": "hybrid",
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "AsIs",
         "rules": [
             {
                 "inboundTag": [
@@ -158,7 +163,14 @@
                 ],
                 "outboundTag": "proxy",
                 "type": "field"
-            }
+            },
+			{
+				"type": "field",
+				"outboundTag": "direct",
+				"domain": [
+				  "domain:.ir"
+				]
+			}
         ]
     }
 }
