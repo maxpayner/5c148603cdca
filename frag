@@ -49,7 +49,7 @@
         {
             "mux": {
                 "concurrency": 8,
-                "enabled": true,
+                "enabled": false,
                 "xudpConcurrency": 8,
                 "xudpProxyUDP443": "reject"
             },
@@ -73,7 +73,7 @@
                 "security": "tls",
                 "sockopt": {
                     "dialerProxy": "frag-out",
-                    "tcpFastOpen": false,
+                    "tcpFastOpen": true,
                     "tcpKeepAliveIdle": 120,
                     "tcpNoDelay": true
                 },
@@ -97,9 +97,9 @@
             "settings": {
                 "domainStrategy": "UseIP",
                 "fragment": {
-                    "interval": "5-10",
-                    "length": "5-10",
-                    "packets": "tlshello"
+                    "interval": "1-5",
+                    "length": "10-15",
+                    "packets": "1-1"
                 }
             },
             "streamSettings": {
