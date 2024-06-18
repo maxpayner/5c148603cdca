@@ -61,7 +61,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "gama.ir",
+                        "address": "zula.ir",
                         "port": 443,
                         "users": [
                             {
