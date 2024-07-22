@@ -61,7 +61,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "zula.ir",
+                        "address": "2016downloadnew.ir",
                         "port": 443,
                         "users": [
                             {
