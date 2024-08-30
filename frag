@@ -61,7 +61,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "2016downloadnew.ir",
+                        "address": "openai.com",
                         "port": 443,
                         "users": [
                             {
@@ -102,8 +102,8 @@
             "settings": {
                 "domainStrategy": "UseIP",
                 "fragment": {
-                    "interval": "1-1",
-                    "length": "10-15",
+                    "interval": "5-10",
+                    "length": "5-10",
                     "packets": "1-1"
                 }
             },
