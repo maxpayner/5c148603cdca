@@ -102,9 +102,9 @@
             "settings": {
                 "domainStrategy": "UseIP",
                 "fragment": {
-                    "interval": "5-10",
-                    "length": "5-10",
-                    "packets": "1-1"
+                    "interval": "20-30",
+                    "length": "1-1",
+                    "packets": "tlshello"
                 }
             },
             "streamSettings": {
