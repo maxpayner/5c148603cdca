@@ -61,7 +61,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "openai.com",
+                        "address": "license-market.ir",
                         "port": 443,
                         "users": [
                             {
