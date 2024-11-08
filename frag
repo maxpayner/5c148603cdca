@@ -1,5 +1,5 @@
 {
-  "remarks": "frag",
+	"remarks": "frag",
   "log": {
     "access": "",
     "error": "",
@@ -127,6 +127,12 @@
       }
     }
   ],
+  "policy": {
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
   "routing": {
     "domainStrategy": "AsIs",
     "rules": [
