@@ -1,176 +1,166 @@
 {
-    "dns": {
-        "servers": [
-			"1.1.1.1",
-            "8.8.8.8"
+  "remarks": "frag",
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
         ],
-        "tag": "built-in-DNS"
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
     },
-    "inbounds": [
-        {
-            "listen": "0.0.0.0",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "udp": true,
-				"auth": "noauth",
-				"allowTransparent": false
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls"
-                ],
-                "enabled": true,
-				"routeOnly": false
-            },
-            "tag": "socks_IN"
-        },
-        {
-            "listen": "0.0.0.0",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "allowTransparent": false,
-				"auth": "noauth",
-				"udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls"
-                ],
-                "enabled": true,
-				"routeOnly": false
-            },
-            "tag": "http_IN"
-        }
-    ],
-    "log": {
-        "loglevel": "Warn"
-    },
-    "outbounds": [
-        {
-            "mux": {
-                "concurrency": 8,
-                "enabled": false,
-                "xudpConcurrency": 8,
-                "xudpProxyUDP443": "reject"
-            },
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "license-market.ir",
-                        "port": 443,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "id": "6c5d5e78-894c-4c11-a3f0-5c148603cdca"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "tls",
-                "sockopt": {
-                    "dialerProxy": "frag-out",
-                    "tcpFastOpen": true,
-                    "tcpKeepAliveIdle": 120,
-                    "tcpNoDelay": true
-                },
-                "tlsSettings": {
-                    "allowInsecure": false,
-                    "fingerprint": "chrome",
-                    "minVersion": "1.3",
-                    "serverName": "aiisontheway.shop"
-                },
-                "wsSettings": {
-                    "headers": {
-                        "Host": "aiisontheway.shop",
-						"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"
-                    },
-                    "path": "/holypath"
-                }
-            },
-            "tag": "proxy"
-        },
-        {
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "UseIP",
-                "fragment": {
-                    "interval": "1-4",
-                    "length": "1-1",
-                    "packets": "1-1"
-                }
-            },
-            "streamSettings": {
-                "sockopt": {
-                    "domainStrategy": "UseIP",
-                    "tcpKeepAliveIdle": 120,
-                    "TcpNoDelay": true
-                }
-            },
-            "tag": "frag-out"
-        },
-        {
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "UseIP"
-            },
-            "streamSettings": {
-            },
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "settings": {
-                "response": {
-                    "type": "none"
-                }
-            },
-            "tag": "block"
-        },
-        {
-            "protocol": "dns",
-            "proxySettings": {
-                "tag": "proxy"
-            },
-            "settings": {
-                "nonIPQuery": "drop"
-            },
-            "tag": "dns-out"
-        }
-    ],
-    "routing": {
-        "domainMatcher": "hybrid",
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "inboundTag": [
-                    "socks_IN"
-                ],
-                "outboundTag": "dns-out",
-                "port": "53",
-                "type": "field"
-            },
-            {
-                "inboundTag": [
-                    "built-in-DNS"
-                ],
-                "outboundTag": "proxy",
-                "type": "field"
-            },
-			{
-				"type": "field",
-				"outboundTag": "direct",
-				"domain": [
-				  "domain:.ir"
-				]
-			}
-        ]
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
     }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "license-market.ir",
+            "port": 443,
+            "users": [
+              {
+                "id": "6c5d5e78-894c-4c11-a3f0-5c148603cdca",
+                "alterId": 0,
+                "email": "t@t.tt",
+                "security": "auto",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "serverName": "aiisontheway.shop",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ],
+          "fingerprint": "chrome",
+          "show": false
+        },
+        "wsSettings": {
+          "path": "/holypath",
+          "headers": {
+            "Host": "aiisontheway.shop"
+          }
+        },
+        "sockopt": {
+          "dialerProxy": "fragment",
+          "tcpKeepAliveIdle": 100,
+          "mark": 255,
+          "tcpNoDelay": true
+        }
+      }
+    },
+    {
+      "tag": "fragment",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs",
+        "fragment": {
+          "packets": "1-1",
+          "length": "1-4",
+          "interval": "1-1"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpKeepAliveIdle": 100
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "enabled": true
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": [
+          "domain:ir"
+        ],
+        "enabled": true
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": [
+          "geoip:private",
+          "geoip:ir"
+        ],
+        "enabled": true
+      },
+      {
+        "type": "field",
+        "port": "0-65535",
+        "outboundTag": "proxy",
+        "enabled": true
+      }
+    ]
+  }
 }
